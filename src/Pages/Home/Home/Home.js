@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '../../../Shared/Header/Header';
+import Services from '../Services/ServicesMain/Services';
 
 const Home = () => {
     return (
         <div>
             <Header></Header>
+            <Services></Services>
         </div>
     );
 };
