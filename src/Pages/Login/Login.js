@@ -52,6 +52,7 @@ const Login = () => {
                         <input onBlur={handlePassword} className='inputs my-2' type="password" name="password" id="" placeholder='Password' required />
                         <FontAwesomeIcon></FontAwesomeIcon>
                     </div>
+                    <p className='text-danger'>{errorElement}</p>
                     <br />
                     <input className='submit-inputs my-2 d-flex justify-content-center' type="submit" value="Login" />
                 </form>

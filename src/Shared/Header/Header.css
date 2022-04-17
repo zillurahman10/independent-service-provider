@@ -5,3 +5,9 @@
 .login {
     font-weight: 700;
 }
+
+.sign-out {
+    border: none;
+    background-color: white;
+    font-weight: 700;
+}
