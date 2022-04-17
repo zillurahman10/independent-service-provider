@@ -12,7 +12,7 @@ const Header = () => {
         signOut(auth)
     }
     return (
-        <div className='container'>
+        <div className='container '>
             <div className='d-flex justify-content-between'>
                 <div>
                     <img className='logo' src={logo} alt="" />
