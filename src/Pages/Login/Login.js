@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faKey } from '@fortawesome/free-solid-svg-icons'
-import { faFont } from '@fortawesome/free-solid-svg-icons'
 import auth from '../../firebase.init';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import googleLogo from '../../../src/images/google-logo.png'
 import facebookLogo from '../../../src/images/facebook-logo.webp'
+
 
 const Login = () => {
     const [email, setEmail] = useState("")
@@ -24,6 +24,10 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending, passwordResetError] = useSendPasswordResetEmail(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    let from = location.state?.from?.pathname || "/";
 
     const handleEmail = e => {
         setEmail(e.target.value)
@@ -41,6 +45,9 @@ const Login = () => {
     let errorElement;
     if (error) {
         errorElement = <p className='text-danger d-flex justify-content-center mt-2'>{error?.message}</p>
+    }
+    if (user) {
+        navigate(from, { replace: true })
     }
 
     const passwordReset = () => {

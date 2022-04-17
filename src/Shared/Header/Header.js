@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css'
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo2.jpg'
+import logo from '../../images/logo2.jfif'
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
@@ -19,9 +19,13 @@ const Header = () => {
                         <img className='logo' src={logo} alt="" />
                     </Link>
                 </div>
-                <div className='my-3'>
+                <div className=''>
                     {
-                        user ? <button onClick={logOut} className='sign-out'>Sign Out</button> : <Link className='text-decoration-none text-dark login' to="Login">Login</Link>
+                        user ? <button onClick={logOut} className='sign-out mt-4'>Sign Out</button> :
+                            <div className='mt-4'>
+                                <Link to="/blogs" className='links'>Blogs</Link>
+                                <Link className='links' to="/login">Login</Link>
+                            </div>
                     }
                 </div>
             </div>

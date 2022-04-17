@@ -1,9 +1,12 @@
 .logo {
-    width: 150px;
+    width: 100px;
 }
 
-.login {
+.links {
     font-weight: 700;
+    text-decoration: none;
+    color: black;
+    margin-right: 15px;
 }
 
 .sign-out {

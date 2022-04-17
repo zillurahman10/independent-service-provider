@@ -13,7 +13,7 @@ const Services = () => {
     return (
         <div>
             <h1 className='d-flex justify-content-center mt-5'>Services</h1>
-            <div className='d-flex'>
+            <div className='container d-flex'>
                 {
                     services.map(service => <ServicesCard
                         key={service.id}
