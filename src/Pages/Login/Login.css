@@ -1,0 +1,19 @@
+.submit-inputs {
+    width: 350px;
+    height: 50px;
+    margin-left: 70px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 25px;
+    background-color: white;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+
+
+.submit-inputs:hover {
+    transition: 0.3s;
+    background-color: #8181ab;
+    color: white;
+}
