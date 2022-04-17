@@ -17,3 +17,38 @@
     background-color: #8181ab;
     color: white;
 }
+
+.google-sign-in-btn {
+    background-color: white;
+    border: none;
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.facebook-sign-in-btn {
+    background-color: white;
+    border: none;
+    border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.google-sign-in-btn:hover {
+    transition: 0.3s;
+    background-color: darkslategray;
+    color: white;
+}
+
+.facebook-sign-in-btn:hover {
+    transition: 0.3s;
+    background-color: blue;
+    color: white;
+}
+
+
+.google-logo {
+    width: 50px;
+}

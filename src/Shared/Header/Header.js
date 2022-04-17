@@ -15,7 +15,9 @@ const Header = () => {
         <div className='container '>
             <div className='d-flex justify-content-between'>
                 <div>
-                    <img className='logo' src={logo} alt="" />
+                    <Link to="/">
+                        <img className='logo' src={logo} alt="" />
+                    </Link>
                 </div>
                 <div className='my-3'>
                     {
