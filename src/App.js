@@ -3,8 +3,10 @@ import './App.css';
 import CheckOut from './Pages/CheckOut/CheckOut';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login';
+import NotFound from './Pages/NotFound/NotFound';
 import SignUp from './Pages/SignUp/SignUp';
 import RequireAuth from './RequireAuth/RequireAuth';
+import Footer from './Shared/Footer/Footer';
 import Header from './Shared/Header/Header';
 
 function App() {
@@ -20,7 +22,9 @@ function App() {
             <CheckOut></CheckOut>
           </RequireAuth>
         }></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

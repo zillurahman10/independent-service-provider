@@ -20,10 +20,10 @@ const Header = () => {
                     </Link>
                 </div>
                 <div className=''>
+                    <Link to="/blogs" className='links'>Blogs</Link>
                     {
                         user ? <button onClick={logOut} className='sign-out mt-4'>Sign Out</button> :
                             <div className='mt-4'>
-                                <Link to="/blogs" className='links'>Blogs</Link>
                                 <Link className='links' to="/login">Login</Link>
                             </div>
                     }
