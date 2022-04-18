@@ -15,7 +15,6 @@ import facebookLogo from '../../../src/images/facebook-logo.webp'
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    // const [errorElement, setErrorElement] = useState("")
     const [
         signInWithEmailAndPassword,
         user,

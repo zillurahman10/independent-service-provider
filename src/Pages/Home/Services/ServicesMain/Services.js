@@ -13,7 +13,7 @@ const Services = () => {
 
     return (
         <div>
-            <h1 className='d-flex justify-content-center mt-5 mb-5'>Services</h1>
+            <h1 className='d-flex justify-content-center mt-5 mb-5'>Subjects</h1>
             <div className='container services-section'>
                 <div className='row'>
                     {

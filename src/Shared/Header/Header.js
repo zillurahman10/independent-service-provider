@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css'
-import { Link } from 'react-router-dom';
-import logo from '../../images/logo2.jfif'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import logo from '../../images/logo.jpg'
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
@@ -12,18 +12,35 @@ const Header = () => {
     const logOut = () => {
         signOut(auth)
     }
+
+    function CustomLink({ children, to, ...props }) {
+        let resolved = useResolvedPath(to);
+        let match = useMatch({ path: resolved.pathname, end: true });
+
+        return (
+            <div>
+                <Link
+                    style={{ borderBottom: match ? "2px solid red" : "none", paddingBottom: "5px" }}
+                    to={to}
+                    {...props}
+                >
+                    {children}
+                </Link>
+            </div>
+        );
+    }
     return (
-        <Navbar bg="light" expand="lg" sticky='top' className='navbar-dark' variant='dark'>
+        <Navbar bg="light" expand="lg" sticky='top' className='navbar-dark mb-3' variant='dark'>
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
-                        <Link to="/blogs" className='links'>Blogs</Link>
-                        <Link to='/about' className='links'>About</Link>
+                        <CustomLink to="/blogs" className='links'>Blogs</CustomLink>
+                        <CustomLink to='/about' className='links'>About</CustomLink>
                         {
                             user ? <button onClick={logOut} className='sign-out'>Sign Out</button> :
                                 <div>
-                                    <Link className='links' to="/login">Login</Link>
+                                    <CustomLink className='links' to="/login">Login</CustomLink>
                                 </div>
                         }
                     </Nav>

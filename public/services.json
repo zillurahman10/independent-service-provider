@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Physics",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ullam deleniti quod molestias",
+        "description": "Physics is a hard subject, Yeah? Physics will no more hard when you jin the tutor buddy physics course",
         "price": 10,
         "img": "https://i.ibb.co/DbxzdDp/physics.jpg",
         "teacher": "https://elearni.wpengine.com/wp-content/uploads/avatars/12/5c51526e375cf-bpfull.jpg",
@@ -12,7 +12,7 @@
     {
         "id": 2,
         "name": "Chemistry",
-        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit tenetur accusantium eligendi error consectetur perferendis nihil",
+        "description": "Chemistry is a hard subject, Yeah? Chemistry will no more hard when you jin the tutor buddy chemistry course",
         "price": 7,
         "img": "https://i.ibb.co/sCzsQ3F/chemistry.jpg",
         "teacher": "https://elearni.wpengine.com/wp-content/uploads/avatars/12/5c51526e375cf-bpfull.jpg",
@@ -22,7 +22,7 @@
     {
         "id": 3,
         "name": "Math",
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam n",
+        "description": "Math is a hard subject, Yeah? Math will no more hard when you jin the tutor buddy math course",
         "price": 14,
         "img": "https://i.ibb.co/yVbHkdx/math.jpg",
         "teacher": "https://elearni.wpengine.com/wp-content/uploads/avatars/12/5c51526e375cf-bpfull.jpg",

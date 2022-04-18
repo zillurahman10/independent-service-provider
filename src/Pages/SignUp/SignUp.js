@@ -17,7 +17,6 @@ const SignUp = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    // const [errorElement, setErrorElement] = useState("")
     const [
         createUserWithEmailAndPassword,
         user,

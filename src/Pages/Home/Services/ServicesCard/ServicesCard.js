@@ -22,9 +22,9 @@ const ServicesCard = ({ service }) => {
                     <div className='d-flex justify-content-center'>
                         <button onClick={checkOut} className=' enroll-btn'>Enroll</button>
                     </div>
-                    <p>{description}</p>
+                    <p className='p-3'>{description}</p>
                     <hr />
-                    <div className='d-flex justify-content-between'>
+                    <div className='container d-flex justify-content-between'>
                         <p>Ratings : {ratings}</p>
                         <h4>$ {price}</h4>
                     </div>
