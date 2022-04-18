@@ -7,7 +7,7 @@ import { faKey } from '@fortawesome/free-solid-svg-icons'
 import { faFont } from '@fortawesome/free-solid-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import './SignUp.css'
 import googleLogo from '../../../src/images/google-logo.png'
 import facebookLogo from '../../../src/images/facebook-logo.webp'
@@ -25,6 +25,7 @@ const SignUp = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [signInWithGoogle, googleUser, googleLoading, googleeError] = useSignInWithGoogle(auth);
+    const [signInWithFacebook, facebookUser, facebookLoading, facebookError] = useSignInWithFacebook(auth);
     const navigate = useNavigate()
 
     const handleName = e => {
@@ -88,7 +89,7 @@ const SignUp = () => {
                             <img className='google-logo' src={googleLogo} alt="" />
                             <p className='d-inline ms-3'>Sign in with google</p>
                         </button>
-                        <button className="facebook-sign-in-btn">
+                        <button onClick={() => signInWithFacebook()} className="facebook-sign-in-btn">
                             <img className='google-logo' src={facebookLogo} alt="" />
                             <p className='d-inline ms-3'>Sign in with facebook</p>
                         </button>

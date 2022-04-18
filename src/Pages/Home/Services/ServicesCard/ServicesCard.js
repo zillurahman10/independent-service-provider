@@ -9,15 +9,19 @@ const ServicesCard = ({ service }) => {
         navigate('/checkout')
     }
     return (
-        <div className='service-cards'>
+        <div className='service-cards col-sm-12 col-lg-4'>
             <div className='single-card border'>
                 <div>
-                    <img className='card-image mb-2' src={img} alt="" />
-                    <img className='teacher' src={teacher} alt="" />
+                    <img className='card-image mb-2 img-fluid' src={img} alt="" />
+                    <div className='d-flex justify-content-center'>
+                        <img className='teacher' src={teacher} alt="" />
+                    </div>
                     <h5 className='d-flex justify-content-center teacher-name'>{teacherName}</h5>
                     <span className='teacher-name d-flex justify-content-center'>Consultant</span>
                     <h3 className='d-flex justify-content-center sub-name'>{name}</h3>
-                    <button onClick={checkOut} className=' enroll-btn'>Enroll</button>
+                    <div className='d-flex justify-content-center'>
+                        <button onClick={checkOut} className=' enroll-btn'>Enroll</button>
+                    </div>
                     <p>{description}</p>
                     <hr />
                     <div className='d-flex justify-content-between'>

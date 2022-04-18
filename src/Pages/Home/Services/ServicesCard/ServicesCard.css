@@ -1,17 +1,9 @@
-.card-image {
-    width: 350px;
-}
-
-.service-cards {
-    margin: 5px;
-}
-
 .teacher {
     width: 90px;
     border-radius: 50px;
     position: relative;
     bottom: 50px;
-    margin-left: 125px;
+    /* margin-left: 155px; */
 }
 
 .enroll-btn {
@@ -20,7 +12,7 @@
     padding: 8px 30px;
     border-radius: 20px;
     display: flex;
-    margin-left: 120px;
+    /* margin-left: 150px; */
     border: 2px solid blue;
 }
 
@@ -44,7 +36,11 @@
 
 
 .single-card {
-    width: 350px;
     height: 620px;
     margin: 6px;
+}
+
+.single-card:hover {
+    transition: 0.5s;
+    box-shadow: 5px 5px 10px;
 }

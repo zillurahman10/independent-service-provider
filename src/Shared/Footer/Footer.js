@@ -4,8 +4,8 @@ const Footer = () => {
     const today = new Date();
     const year = today.getFullYear()
     return (
-        <div className='d-flex justify-content-center'>
-            <p><small>Copyright @ {year}</small></p>
+        <div style={{ position: 'absolute', bottom: '0' }}>
+            <p className='d-flex justify-content-center'><small>Copyright @ {year}</small></p>
         </div>
     );
 };

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faKey } from '@fortawesome/free-solid-svg-icons'
 import auth from '../../firebase.init';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import googleLogo from '../../../src/images/google-logo.png'
@@ -24,6 +24,7 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending, passwordResetError] = useSendPasswordResetEmail(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [signInWithFacebook, facebookUser, facebookLoading, facebookError] = useSignInWithFacebook(auth);
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -50,6 +51,20 @@ const Login = () => {
         navigate(from, { replace: true })
     }
 
+    const googleSignIn = () => {
+        signInWithGoogle()
+    }
+    if (googleUser) {
+        toast(googleUser?.displayName)
+        navigate('/')
+    }
+    const facebookSignIn = () => {
+        signInWithFacebook()
+    }
+    if (facebookUser) {
+        toast(facebookUser.displayName)
+        navigate('/')
+    }
     const passwordReset = () => {
         sendPasswordResetEmail(email)
         if (email === "") {
@@ -87,11 +102,11 @@ const Login = () => {
                 </div>
                 <div className='d-flex justify-content-center'>
                     <div>
-                        <button className="google-sign-in-btn d-block mb-2">
+                        <button onClick={googleSignIn} className="google-sign-in-btn d-block mb-2">
                             <img className='google-logo' src={googleLogo} alt="" />
                             <p className='d-inline ms-3'>Sign in with google</p>
                         </button>
-                        <button className="facebook-sign-in-btn">
+                        <button onClick={facebookSignIn} className="facebook-sign-in-btn">
                             <img className='google-logo' src={facebookLogo} alt="" />
                             <p className='d-inline ms-3'>Sign in with facebook</p>
                         </button>
